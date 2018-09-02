@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if members %}
+<ul>
+    {% for member in members %}
+    <li class="row mt-4 mb-4 pb-4 border-bottom border-light">
+        <div class="col-auto">
+            <img src="{{member.avatar_url}}">
+        </div>
+        <div class="col">
+            <a href="{{member.html_url}}" target="_blank">{{member.login}}</a>
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endif %}
+{% endblock %}
